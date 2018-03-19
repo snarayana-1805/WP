@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DCRetailerWeb.Models.Campaign>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignSponser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignMedia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignStartDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CampaignEndDate)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignSponser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignMedia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CampaignEndDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CampaignId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CampaignId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CampaignId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

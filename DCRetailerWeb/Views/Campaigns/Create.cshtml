@@ -1,0 +1,64 @@
+﻿@model DCRetailerWeb.Models.Campaign
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Campaign</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CampaignTitle" class="control-label"></label>
+                <input asp-for="CampaignTitle" class="form-control" />
+                <span asp-validation-for="CampaignTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignType" class="control-label"></label>
+                <input asp-for="CampaignType" class="form-control" />
+                <span asp-validation-for="CampaignType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignDescription" class="control-label"></label>
+                <input asp-for="CampaignDescription" class="form-control" />
+                <span asp-validation-for="CampaignDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignSponser" class="control-label"></label>
+                <input asp-for="CampaignSponser" class="form-control" />
+                <span asp-validation-for="CampaignSponser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignMedia" class="control-label"></label>
+                <input asp-for="CampaignMedia" class="form-control" />
+                <span asp-validation-for="CampaignMedia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignStartDate" class="control-label"></label>
+                <input asp-for="CampaignStartDate" class="form-control" />
+                <span asp-validation-for="CampaignStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CampaignEndDate" class="control-label"></label>
+                <input asp-for="CampaignEndDate" class="form-control" />
+                <span asp-validation-for="CampaignEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

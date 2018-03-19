@@ -1,0 +1,64 @@
+﻿@model DCRetailerWeb.Models.Campaign
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Campaign</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignTitle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignSponser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignSponser)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignMedia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignMedia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignStartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignStartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CampaignEndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CampaignEndDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CampaignId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DCRetailerWeb.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<p>
+    <table><tr><td>DropDown</td></tr></table>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MRP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SP)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OfferDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsOnOffer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductImage)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MRP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfferDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsOnOffer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductImage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+<table><tr><td><a asp-action="Upload">Upload</a></td></tr></table>
